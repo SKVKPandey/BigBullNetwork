@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+    <!-- Background Shapes -->
+    <circle cx="400" cy="300" r="200" fill="url(#radialGradient)" class="hover-pulse"/>
+    <path d="M300,200 Q400,100 500,200 T700,200" stroke="url(#gradientStroke)" stroke-width="4" class="hover-dash"/>
+    <path d="M100,300 Q200,400 300,300 T500,300" stroke="url(#gradientStroke)" stroke-width="4" class="hover-dash"/>
+    
+    <!-- Social Media Icons -->
+    <g class="hover-scale">
+        <!-- Like/Heart Icon -->
+        <path d="M350,250 C300,200 200,250 250,350 L400,450 L550,350 C600,250 500,200 450,250 L400,300 Z" 
+              fill="url(#iconGradient)" class="hover-fill"/>
+        
+        <!-- Comment Bubble -->
+        <path d="M500,200 Q600,200 600,300 Q600,400 500,400 L450,400 L420,450 L400,400 L350,400 Q250,400 250,300 Q250,200 350,200 Z" 
+              fill="url(#iconGradient2)" class="hover-fill"/>
+        
+        <!-- Share Arrow -->
+        <path d="M650,150 L700,200 L650,250 M700,200 L500,200" 
+              stroke="url(#gradientStroke)" stroke-width="8" class="hover-stroke"/>
+    </g>
+
+    <!-- Decorative Elements -->
+    <circle cx="200" cy="150" r="20" fill="url(#iconGradient)" class="hover-scale"/>
+    <circle cx="600" cy="450" r="30" fill="url(#iconGradient2)" class="hover-scale"/>
+    <circle cx="700" cy="250" r="15" fill="url(#iconGradient)" class="hover-scale"/>
+
+    <!-- Gradients -->
+    <defs>
+        <radialGradient id="radialGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(251,191,36,0.1)"/>
+            <stop offset="100%" stop-color="rgba(234,88,12,0.05)"/>
+        </radialGradient>
+        
+        <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FBB724"/>
+            <stop offset="100%" stop-color="#F97316"/>
+        </linearGradient>
+        
+        <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FBB724"/>
+            <stop offset="100%" stop-color="#F97316"/>
+        </linearGradient>
+        
+        <linearGradient id="iconGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#F97316"/>
+            <stop offset="100%" stop-color="#FBB724"/>
+        </linearGradient>
+    </defs>
+
+    <style>
+        .hover-scale { 
+            transition: transform 0.3s ease;
+            transform-origin: center;
+        }
+        .hover-scale:hover { 
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        
+        .hover-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .hover-dash {
+            stroke-dasharray: 10;
+            animation: dash 20s linear infinite;
+        }
+        
+        .hover-fill:hover {
+            filter: brightness(1.2);
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        
+        .hover-stroke:hover {
+            stroke-width: 10;
+            filter: brightness(1.2);
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes dash {
+            to { stroke-dashoffset: 1000; }
+        }
+    </style>
+</svg>
